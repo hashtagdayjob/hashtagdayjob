@@ -14,13 +14,18 @@
             padding: 0;
             margin:0;
             font-family: 'proxima-nova-extra-condensed';
+        }
+        main{
+            width: 66%;
+            height: 100%;
+            float: left;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
         h1{
-            width: 100%;
+            width: 66%;
             height: 33%;
             min-height: 200px;
             order: 2;
@@ -39,6 +44,12 @@
             flex-direction: row-reverse;
             align-items: flex-end;
             overflow: hidden;
+            position: relative;
+        }
+        aside.social{
+            float: right;
+            height: 100%;
+            width:33%;
         }
         section.play{
             flex-direction: row;
@@ -98,39 +109,57 @@
 </head>
 
 <body>
-
-    <h1>
-        <a href='mailto:theboss@hashtagdayjob.co.uk' title='Make enquiry'><img src='images/web_header.svg' alt='HashtagDayjob Ltd: UI / UX / You got It'></a>
-    </h1>
-    <section class="work">
-        <p>#work</p>
-        <!--<article>
-            <label for="article-1-open">
-                <img src='images/feature_image_inheritance.png'>
-            </label>
-            <input type=radio id="article-1-open" class="open" name=pages>
-            <div class="article-content">
-            <label for="article-1-close">
-                Close
-            </label>
-            </div>
-            <input type=radio id="article-1-close" class="close" name=pages>
-        </article>-->
+    <main>
+        <h1>
+            <a href='mailto:theboss@hashtagdayjob.co.uk' title='Make enquiry'><img src='images/web_header.svg' alt='HashtagDayjob Ltd: UI / UX / You got It'></a>
+        </h1>
+        <section class="work">
+            <p>#work</p>
+            <!--<article>
+                <label for="article-1-open">
+                    <img src='images/feature_image_inheritance.png'>
+                </label>
+                <input type=radio id="article-1-open" class="open" name=pages>
+                <div class="article-content">
+                <label for="article-1-close">
+                    Close
+                </label>
+                </div>
+                <input type=radio id="article-1-close" class="close" name=pages>
+            </article>-->
+        </section>
+        <section class="play">
+            <p>#play</p>
+            <!--<article>
+                <label for="article-2-open">
+                    <img src='images/feature_image_inheritance.png'>
+                </label>
+                <input type=radio id="article-2-open" class="open" name=pages>
+                <div class="article-content">
+                <label for="article-2-close">
+                    Close
+                </label>
+                </div>
+                <input type=radio id="article-2-close" class="close" name=pages>
+            </article>-->
+        </sction>
+    </main>
+    <aside class="social">
+        <p>#social!</p>
+        <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/nigeljohnwade/lists/design" data-widget-id="647382369377370116">
+            Tweets from https://twitter.com/nigeljohnwade/lists/design
+        </a>
+        <script>
+            !function(d,s,id){
+                var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                if(!d.getElementById(id)){
+                    js=d.createElement(s);
+                    js.id=id;
+                    js.src=p+"://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js,fjs);
+                }
+            }(document,"script","twitter-wjs");
+        </script>
     </section>
-    <section class="play">
-        <p>#play</p>
-        <!--<article>
-            <label for="article-2-open">
-                <img src='images/feature_image_inheritance.png'>
-            </label>
-            <input type=radio id="article-2-open" class="open" name=pages>
-            <div class="article-content">
-            <label for="article-2-close">
-                Close
-            </label>
-            </div>
-            <input type=radio id="article-2-close" class="close" name=pages>
-        </article>-->
-    </sction>
 </body>
 </html>

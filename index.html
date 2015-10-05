@@ -23,6 +23,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
         h1{
             width: 66%;
@@ -44,7 +45,6 @@
             flex-direction: row-reverse;
             align-items: flex-end;
             overflow: hidden;
-            position: relative;
         }
         aside.social{
             float: right;
@@ -78,6 +78,12 @@
         img{
             display: block;
         }
+        article label{
+            cursor: pointer;
+        }
+        article label.close{
+            position: absolute;
+        }
         div.article-content{
             display: none;
             width: 100%;
@@ -101,6 +107,15 @@
         input.close:checked ~ div.article-content{
             display: block;
         }
+        iframe{
+            display: block;
+        }
+        .flex-container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
     <!-- Typekit --> 
     <script src="//use.typekit.net/bin2ptp.js"></script>
@@ -115,33 +130,36 @@
         </h1>
         <section class="work">
             <p>#work</p>
-            <!--<article>
+            <article>
                 <label for="article-1-open">
                     <img src='images/feature_image_inheritance.png'>
                 </label>
                 <input type=radio id="article-1-open" class="open" name=pages>
                 <div class="article-content">
-                <label for="article-1-close">
+                <label for="article-1-close" class="close">
                     Close
                 </label>
                 </div>
                 <input type=radio id="article-1-close" class="close" name=pages>
-            </article>-->
+            </article>
         </section>
         <section class="play">
             <p>#play</p>
-            <!--<article>
+            <article>
                 <label for="article-2-open">
-                    <img src='images/feature_image_inheritance.png'>
+                    <img src='images/bent_mir_thumbnail.png'>
                 </label>
                 <input type=radio id="article-2-open" class="open" name=pages>
                 <div class="article-content">
-                <label for="article-2-close">
+                <label for="article-2-close" class="close">
                     Close
                 </label>
+                    <div class="flex-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/tUmogotMNzw" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
                 <input type=radio id="article-2-close" class="close" name=pages>
-            </article>-->
+            </article>
         </sction>
     </main>
     <aside class="social">

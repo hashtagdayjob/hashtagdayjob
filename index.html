@@ -94,10 +94,14 @@
         input.close:checked ~ div.article-content{
             display: block;
         }
-        iframe{
+        iframe, video {
             position: absolute;
-            max-width: 100%;
             z-index: -1;
+        }
+        video {
+            height: 100vh;
+            width: 100vw;
+            object-fit: cover;
         }
     </style>
     <!-- Typekit --> 
@@ -107,7 +111,8 @@
 </head>
 
 <body>
-<iframe width="100%" height="150%" src="https://www.youtube.com/embed/6nJIzHl56nU?autoplay=1&loop=1&playlist=6nJIzHl56nU" frameborder="0" allowfullscreen autoplay></iframe>
+    <!--<iframe src="https://www.youtube.com/embed?autoplay=1&constrols=0&disablekb=1&loop=1&listType=playlist&list=PLHoIUe34icAoz8Rg9IFne8qfJR1DgIMYQ" frameborder="0" allowfullscreen autoplay></iframe>-->
+    <video src="videos/KaleidaShineComposite.mp4" autoplay autostart></video>
     <h1>
         <a href='mailto:theboss@hashtagdayjob.co.uk' title='Make enquiry'><img src='images/web_header.svg' alt='HashtagDayjob Ltd: UI / UX / You got It'></a>
     </h1>

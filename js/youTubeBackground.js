@@ -4,11 +4,10 @@ const youTubeBackground = {
         this.viewportWidth = window.innerWidth;
         this.viewportHeight = window.innerHeight;
         this.youTubeBackgroundWidth = this.element.clientWidth;
-        this.youTubeBackgroundHeight = this.element.clientHeight; 
-        this.orientation = this.viewportHeight - this.viewportWidth > 0 ? 'portrait' : 'landscape';
+        this.youTubeBackgroundHeight = this.element.clientHeight;
         this.heightScale = this.viewportHeight/this.youTubeBackgroundHeight;
         this.widthScale = this.viewportWidth/this.youTubeBackgroundWidth;
-        this._setHeight();
+        this._resizeHandler();
         console.log(this);
     },
     _setHeight: function(){
@@ -18,10 +17,17 @@ const youTubeBackground = {
                 this.element.width = this.youTubeBackgroundWidth * this.heightScale;
                 break;
             case 'landscape':
-                this.element.height = this.youTubeBackgroundHeight * this.widthScale;
-                this.element.width = this.youTubeBackgroundWidth * this.widthScale;
+                this.element.height = this.youTubeBackgroundHeight * this.heightScale;
+                this.element.width = this.youTubeBackgroundWidth * this.heightScale;
                 break;
         }
+    },
+    _detectOrientation: function () {
+        return this.viewportHeight - this.viewportWidth > 0 ? 'portrait' : 'landscape';
+    },
+    _resizeHandler: function(){
+        this.orientation = this._detectOrientation();
+        this._setHeight();
     }
 }
 youTubeBackground.init();

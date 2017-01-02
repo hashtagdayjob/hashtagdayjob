@@ -17,13 +17,13 @@ const youTubeBackground = {
                 this.element.width = this.youTubeBackgroundWidth * this.heightScale;
                 break;
             case 'landscape':
-                this.element.height = this.youTubeBackgroundHeight * this.heightScale;
-                this.element.width = this.youTubeBackgroundWidth * this.heightScale;
+                this.element.height = this.youTubeBackgroundHeight * this.widthScale;
+                this.element.width = this.youTubeBackgroundWidth * this.widthScale;
                 break;
         }
     },
     _detectOrientation: function () {
-        return this.viewportHeight - this.viewportWidth > 0 ? 'portrait' : 'landscape';
+        return this.heightScale - this.widthScale > 0 ? 'portrait' : 'landscape';
     },
     _resizeHandler: function(){
         this.orientation = this._detectOrientation();

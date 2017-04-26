@@ -101,7 +101,6 @@ legend {
     background-color: steelblue;
     padding: 0.25em 0.5em;
     color: white;
-    font-family: 'proxima-nova-extra-condensed';
 }
 .flex-root{
     display: flex;

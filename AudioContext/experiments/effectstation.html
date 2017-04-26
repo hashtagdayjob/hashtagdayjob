@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Effectstation</title>
+    <link rel='stylesheet' href='../css/style.css'>
+</head>
+
+<body>
+    <h1>Effectstation</h1>
+<form>
+    <fieldset>
+        <legend>Oscilliscope</legend>
+        <div id='oscilliscope'>
+            <canvas id='oscilliscopeVisualiser'></canvas>
+        </div>
+    </fieldset>
+    <fieldset id='masterVolume'>
+        <legend>Master volume</legend>
+        <div class='control-group'>
+            <label for='volume'>Volume</label>
+            <input type='range' min='0' max='10' step='0.1' value='1' id='volume'>
+        </div>
+        <div class='control-group'>
+            <label for='pan'>Pan</label>
+            <input type='range' min='-1' max='1' step='0.01' value='0' id='pan'>
+        </div>
+    </fieldset>
+    <fieldset id='reverb' class='fieldset-group'>
+        <legend>Convolver reverb</legend>
+        <div class='control-group'>
+            <label for='reverbWetChannel'>Wet channel level</label>
+            <input type='range' min='0' max='1' step='0.01' value='1' id='reverbWetChannel'>
+        </div>
+    </fieldset>
+    <fieldset id='delay' class='fieldset-group'>
+        <legend>Dual delay</legend>
+        <div class='control-group'>
+            <label for='delayTimeLeft'>Delay time left</label>
+            <input type='range' min='0' max='10' step='0.1' value='1' id='delayTimeLeft'>
+        </div>
+        <div class='control-group'>
+            <label for='delayFeedbackLeft'>Feedback left</label>
+            <input type='range' min='0' max='1' step='0.001' value='0.6' id='delayFeedbackLeft'>
+        </div>
+        <div class='control-group'>
+            <label for='delayTimeRight'>Delay time right</label>
+            <input type='range' min='0' max='10' step='0.1' value='1' id='delayTimeRight'>
+        </div>
+        <div class='control-group'>
+            <label for='delayFeedbackLeft'>Feedback</label>
+            <input type='range' min='0' max='1' step='0.001' value='0.6' id='delayFeedbackRight'>
+        </div>
+        <div class='control-group'>
+            <label for='delayLeftWetLevel'>Wet signal left gain</label>
+            <input type='range' min='0' max='1' step='0.01' value='1' id='delayLeftWetLevel'>
+        </div>
+        <div class='control-group'>
+            <label for='delayRightWetLevel'>Wet signal right gain</label>
+            <input type='range' min='0' max='1' step='0.01' value='1' id='delayRightWetLevel'>
+        </div>
+    </fieldset>
+    <fieldset id='dynamics'>
+        <legend>Dynamics</legend>
+        <div class='control-group'>
+            <label for='compressorBypass'>
+                <input type='checkbox' id='compressorBypass'>Bypass
+            </label>
+        </div>
+        <div class='control-group'>
+            <label for='dynamicsThreshold'>Threshold</label>
+            <input type='range' min='-100' max='0' step='0.1' value='-24' id='dynamicsThreshold'>
+        </div>
+        <div class='control-group'>
+            <label for='dynamicsKnee'>Knee</label>
+            <input type='range' min='0' max='40' step='1' value='30' id='dynamicsKnee'>
+        </div>
+        <div class='control-group'>
+            <label for='dynamicsRatio'>Ratio</label>
+            <input type='range' min='1' max='20' step='0.1' value='12' id='dynamicsRatio'>
+        </div>
+        <div class='control-group'>
+            <label for='dynamicsAttack'>Attack</label>
+            <input type='range' min='0' max='1' step='0.001' value='0.003' id='dynamicsAttack'>
+        </div>
+        <div class='control-group'>
+            <label for='dynamicsRelease'>Release</label>
+            <input type='range' min='0' max='1' step='0.001' value='0.25' id='dynamicsRelease'>
+        </div>
+    </fieldset>   
+    <fieldset id='vca'>
+        <legend>VCA</legend>
+        <div class='control-group'>
+            <label for='vcaDistortion'>Distortion</label>
+            <input type='range' min='0' max='8000' step='1' value='800' id='vcaDistortion'>
+        </div>
+    </fieldset>
+    <fieldset id='filter1'>
+        <legend>Filter</legend>
+        <div class='span-6'>
+            <div class='control-group'>
+                <label for='filter1frequency'>Filter frequency</label>
+                <input type='range' min='1' max='5' step='0.001' value='3' id='filter1frequency'>
+            </div>
+            <div class='control-group'>
+                <label for='filter1Q'>Filter Q</label>
+                <input type='number' min='0.0001' max='1000' step='0.0001' value='1' id='filter1Q'>
+            </div>
+            <div class='control-group'>
+                <label for='filter1Gain'>Filter gain</label>
+                <input type='range' min='-40' max='40' value='0' id='filter1Gain'>
+            </div>
+            <div class='control-group'>
+                <label for='filter1Type'>Filter type</label>
+                <select id='filter1Type'>
+                    <option value='lowpass' selected>Low Pass</option>
+                    <option value='bandpass'>Band Pass</option>
+                    <option value='highpass'>High Pass</option>
+                    <option value='lowshelf'>Low Shelf</option>
+                    <option value='highshelf'>High Shelf</option>
+                    <option value='peaking'>Peaking</option>
+                    <option value='notch'>Notch</option>
+                    <option value='allpass'>All Pass</option>
+                </select>
+            </div>
+        </div>
+        <div class='span-6'>
+            <div class='control-group'>
+                <label for='filter1LfoFrequency'>Filter LFO frequency</label>
+                <input type='range' min='0.01' max='8' step='0.01' value='0.01' id='filter1LfoFrequency'>
+            </div>
+            <div class='control-group'>
+                <label for='lfo1Type'>Filter LFO waveform</label>
+                <select id='lfo1Type'>
+                    <option value='sine'>Sine</option>
+                    <option value='square'>Square</option>
+                    <option value='sawtooth'>Sawtooth</option>
+                    <option value='triangle'>Triangle</option>
+                </select>
+            </div>
+            <div class='control-group'>
+                <label for='lfo1Gain'>Filter LFO gain</label>
+                <input type='range' min='0' max='100' step='0.1' value='0' id='filter1LfoGain'>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<script src='../js/require.js' data-main='../js/effectstation'></script>
+<script type='text/javascript'>
+    document.querySelector('#oscilliscopeVisualiser').height = '200';
+    document.querySelector('#oscilliscopeVisualiser').width = document.querySelector('#oscilliscope').clientWidth;
+    document.querySelector('#volume').addEventListener('change', function(event){
+        masterVolume.gain.value = event.target.value;
+    });
+    document.querySelector('#pan').addEventListener('change', function(event){
+        panner.pan.value = event.target.value;
+    });
+    document.querySelector('#reverbWetChannel').addEventListener('change', function(event){
+        reverbUnit.wetChannel.gain.value = event.target.value;
+    }); 
+    document.querySelector('#delayTimeLeft').addEventListener('change', function(event){
+        echoUnit.delayLeft.delayTime.value = event.target.value;
+    });
+    document.querySelector('#delayTimeRight').addEventListener('change', function(event){
+        echoUnit.delayRight.delayTime.value = event.target.value;
+    });
+    document.querySelector('#delayFeedbackLeft').addEventListener('change', function(event){
+        echoUnit.feedbackLeft.gain.value = event.target.value;
+    });
+    document.querySelector('#delayFeedbackRight').addEventListener('change', function(event){
+        echoUnit.feedbackRight.gain.value = event.target.value;
+    });
+    document.querySelector('#delayRightWetLevel').addEventListener('change', function(event){
+        echoUnit.wetChannelRight.gain.value = event.target.value;
+    });
+    document.querySelector('#delayLeftWetLevel').addEventListener('change', function(event){
+        echoUnit.wetChannelLeft.gain.value = event.target.value;
+    });
+    document.querySelector('#compressorBypass').addEventListener('change', function(event){
+        const bypass = event.target.checked;
+        compressor.bypass(bypass);
+    });    
+    document.querySelector('#dynamicsThreshold').addEventListener('change', function(event){
+        compressor.compressor.threshold.exponentialRampToValueAtTime(event.target.value, context.currentTime + 0.02)
+    });
+    document.querySelector('#dynamicsKnee').addEventListener('change', function(event){
+        compressor.compressor.knee.exponentialRampToValueAtTime(event.target.value, context.currentTime + 0.02)
+    });
+    document.querySelector('#dynamicsRatio').addEventListener('change', function(event){
+        compressor.compressor.ratio.exponentialRampToValueAtTime(event.target.value, context.currentTime + 0.02)
+    });
+    document.querySelector('#dynamicsAttack').addEventListener('change', function(event){
+        compressor.compressor.attack.exponentialRampToValueAtTime(event.target.value, context.currentTime + 0.02)
+    });
+    document.querySelector('#dynamicsRelease').addEventListener('change', function(event){
+        compressor.compressor.release.exponentialRampToValueAtTime(event.target.value, context.currentTime + 0.02)
+    });
+    document.querySelector('#vcaDistortion').addEventListener('change', function(event){
+        distortion.setCurve(Number(event.target.value));
+    });
+    document.querySelector('#filter1frequency').addEventListener('change', function(event){
+        filter1.frequency.value = Math.pow(2, event.target.value) * 55;
+    });
+    document.querySelector('#filter1Q').addEventListener('change', function(event){
+        filter1.Q.value = event.target.value;
+    });
+    document.querySelector('#filter1Gain').addEventListener('change', function(event){
+        filter1.gain.value = event.target.value;
+    });
+    document.querySelector('#filter1Type').addEventListener('change', function(event){
+        filter1.type = event.target.value;
+    });
+    document.querySelector('#filter1LfoFrequency').addEventListener('change', function(event){
+        lfo1.oscillator.frequency.value = event.target.value;
+    });
+    document.querySelector('#filter1LfoGain').addEventListener('change', function(event){
+        lfo1.gain.gain.value = event.target.value;
+    });
+    document.querySelector('#lfo1Type').addEventListener('change', function(event){
+        lfo1.oscillator.type = event.target.value;
+    });
+    document.querySelector('form').addEventListener('submit', function(event){
+        event && event.preventDefault()    
+    })
+</script>
+<script type="text/javascript" src="https://fast.fonts.net/jsapi/de166da6-414b-41f1-a178-0108161506fe.js"></script>
+</body>
+</html>

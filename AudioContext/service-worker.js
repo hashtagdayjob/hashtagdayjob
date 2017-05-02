@@ -1,11 +1,11 @@
 const CACHE_NAME = 'dialexy-v4';
 const urlsToCache = [
-    'AudioContext/index.html',
-    'AudioContext/css/style.css',
-    'AudioContext/audio/In The Silo Revised.wav',
-    'AudioContext/js/audioContext.js',
-    'AudioContext/js/require.js',
-    'AudioContext/js/simplethiser.js',
+    'index.html',
+    'css/style.css',
+    'audio/In The Silo Revised.wav',
+    'js/audioContext.js',
+    'js/require.js',
+    'js/simplethiser.js',
 ];
 self.addEventListener('install', function(event) {
     console.log(event);

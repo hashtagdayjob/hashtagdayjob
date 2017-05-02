@@ -287,5 +287,14 @@
         event && event.preventDefault()    
     })
 </script>
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('./service-worker.js')
+            .then(function(worker) {
+                    console.log('Service Worker Registered: ' + worker.scope); 
+            });
+    }
+</script>
 </body>
 </html>

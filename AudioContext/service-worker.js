@@ -1,11 +1,28 @@
 const CACHE_NAME = 'audio-v1';
 const urlsToCache = [
     'index.html',
+    'experiments/chorus.html',
+    'experiments/flanger.html',
+    'experiments/effectstation.html',
+    'experiments/flangerES2016module.html',
+    'experiments/inchdown_reverb.html',
+    'experiments/simplethiser.html',
+    'experiments/simplethiser_v2.html',
     'css/style.css',
     'audio/In The Silo Revised.wav',
     'js/audioContext.js',
     'js/require.js',
     'js/simplethiser.js',
+    'js/simplethiser_v2.js',
+    'js/chorus.js',
+    'js/effectstation.js',
+    'js/flanger.js',
+    'js/inchdown.js',
+    'js/flangerES2016module.js',
+    'js/simplethiser_v2.js',
+    'js/simplethiser_v2.js',
+    'js/simplethiser_v2.js',
+    'js/simplethiser_v2.js',
 ];
 self.addEventListener('install', function(event) {
     console.log(event);

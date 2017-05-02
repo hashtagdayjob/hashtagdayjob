@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dialexy-v4';
+const CACHE_NAME = 'audio-v1';
 const urlsToCache = [
     'index.html',
     'css/style.css',

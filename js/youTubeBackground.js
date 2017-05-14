@@ -35,6 +35,7 @@ const youTubeBackground = {
     _resizeHandler: function(){
         youTubeBackground.orientation = youTubeBackground._detectOrientation();
         youTubeBackground._setHeight();
+        console.dir(youTubeBackground.element);
     }
 }
 youTubeBackground.init();

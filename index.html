@@ -11,6 +11,7 @@
         }
         body{
             height: 100%;
+            width: 100%;
             padding: 0;
             margin:0;
             display: flex;
@@ -87,6 +88,19 @@
         img{
             display: block;
         }
+        iframe {
+            position: absolute;
+            z-index: -1;
+            object-fit: cover;
+        }
+        video {
+            position: absolute;
+            z-index: -1;
+            height: 100vh;
+            width: 100vw;
+            object-fit: cover;
+        }
+        /* End critical inline CSS */
         div.article-content{
             display: none;
             width: 100%;
@@ -109,18 +123,6 @@
         }
         input.close:checked ~ div.article-content{
             display: block;
-        }
-        iframe {
-            position: absolute;
-            z-index: -1;
-            object-fit: cover;
-        }
-        video {
-            position: absolute;
-            z-index: -1;
-            height: 100vh;
-            width: 100vw;
-            object-fit: cover;
         }
     </style>
     <!-- Typekit --> 

@@ -15,10 +15,12 @@ const youTubeBackground = {
             case 'portrait':
                 this.element.height = this.youTubeBackgroundHeight * this.heightScale;
                 this.element.width = this.youTubeBackgroundWidth * this.heightScale;
+                this.element.style.left = (this.viewportWidth - this.element.width)/2 + 'px';
                 break;
             case 'landscape':
                 this.element.height = this.youTubeBackgroundHeight * this.widthScale;
                 this.element.width = this.youTubeBackgroundWidth * this.widthScale;
+                this.element.style.top = (this.viewportHeight - this.element.height)/2 + 'px';
                 break;
         }
     },

@@ -23,6 +23,10 @@
         .fluid-type {
             font-size: 14px;
         }
+        .fluid-type p {
+            max-width: 60ch;
+            line-height: 1.35;
+        }
 
         @media screen and (min-width: 320px) {
             .fluid-type {
@@ -53,15 +57,15 @@
             background-color: black;
             display: flex;
             flex-direction: row-reverse;
-            align-items: flex-end;
+            align-items: stretch;
             overflow: hidden;
-            opacity: 0.5;
-        }
-        section:hover{
-            opacity: 1;
         }
         section.play{
             flex-direction: row;
+        }
+        article{
+            width: 25%;
+            height: 100%;
         }
         .work{
             order: 1;
@@ -86,6 +90,8 @@
         }
         img{
             display: block;
+            width: 100%;
+            height: 100%;
         }
         div.article-content{
             display: none;
@@ -96,7 +102,7 @@
             left: 0px;
             bottom: 0px;
             right: 0px;
-            background-color: rgba(64, 64, 64, 0.8);
+            background-color: rgb(64, 64, 64);
             z-index: 1;
         }
         input{
@@ -110,90 +116,113 @@
         input.close:checked ~ div.article-content{
             display: block;
         }
-        iframe, video {
+        /*iframe {*/
+        /*position: absolute;*/
+        /*z-index: -1;*/
+        /*}*/
+        video {
             position: absolute;
             z-index: -1;
-        }
-        video {
             height: 100vh;
             width: 100vw;
             object-fit: cover;
         }
+        .app-youTubeBackgroundWrapper{
+            position: absolute;
+            z-index: -1;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
     </style>
-    <!-- Typekit --> 
+    <!-- Typekit -->
     <script src="//use.typekit.net/bin2ptp.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
-    
+
 </head>
 
 <body>
-    <!--<iframe src="https://www.youtube.com/embed?autoplay=1&constrols=0&disablekb=1&loop=1&listType=playlist&list=PLHoIUe34icAoz8Rg9IFne8qfJR1DgIMYQ" frameborder="0" allowfullscreen autoplay></iframe>-->
-    <video src="videos/KaleidaShineComposite.mp4" autoplay autostart></video>
-    <h1>
-        <a href='mailto:theboss@hashtagdayjob.co.uk' title='Make enquiry'><img src='images/web_header.svg' alt='HashtagDayjob Ltd: UI / UX / You got It'></a>
-    </h1>
-    <section class="work">
-        <p>#work</p>
-        <article>
-            <label for="article-1-open">
-                <img src='images/feature_image_inheritance.png'>
-            </label>
-            <input type=radio id="article-1-open" class="open" name=pages>
-            <div class="article-content fluid-type">
+<div class="app-youTubeBackgroundWrapper">
+    <iframe  width="560" height="315" class="app-youTubeBackground" src="https://www.youtube.com/embed?autoplay=1&constrols=0&disablekb=1&loop=1&listType=playlist&list=PLHoIUe34icAoz8Rg9IFne8qfJR1DgIMYQ" frameborder="0" allowfullscreen autoplay></iframe>
+</div>
+<!--<video src="videos/KaleidaShineComposite.mp4" autoplay autostart></video>-->
+<h1>
+    <img src='images/web_header.svg' alt='HashtagDayjob Ltd: UI / UX / You got It'>
+</h1>
+<section class="work">
+    <p>#work</p>
+    <article>
+        <label for="article-1-open">
+            <img src='images/Typography Icon Square Black On Orange.svg'>
+        </label>
+        <input type=radio id="article-1-open" class="open" name=pages>
+        <div class="article-content fluid-type">
             <label for="article-1-close">
                 Close
             </label>
             <h2>Plain</h2>
-<p>
-    Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-</p>
-<h2>Swash</h2>
-<p class="swsh">
-    Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-</p>
+            <p>
+                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
+            </p>
+            <h2>Swash</h2>
+            <p class="swsh">
+                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
+            </p>
 
-<h2>Stylistic Alternatives</h2>
-<p class="salt">
-    Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-</p>
+            <h2>Stylistic Alternatives</h2>
+            <p class="salt">
+                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
+            </p>
 
-<h2>Small Caps</h2>
-<p class="smcp">
-    Cras PHARETRA semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-</p>
+            <h2>Small Caps</h2>
+            <p class="smcp">
+                Cras PHARETRA semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
+            </p>
 
-<h2>Contextual Alternates</h2>
-<p class="calt">
-    Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-</p>
+            <h2>Contextual Alternates</h2>
+            <p class="calt">
+                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
+            </p>
 
-<h2>Discretionary Ligatures</h2>
-<p class="dlig">
-    Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-</p>
+            <h2>Discretionary Ligatures</h2>
+            <p class="dlig">
+                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
+            </p>
 
-<h2>Common Ligatures</h2>
-<p class="clig">
-    Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-</p>
-            </div>
-            <input type=radio id="article-1-close" class="close" name=pages>
-        </article>
-    </section>
-    <section class="play">
-        <p>#play</p>
-        <article>
-            <label for="article-2-open">
-                <img src='images/feature_image_inheritance.png'>
+            <h2>Common Ligatures</h2>
+            <p class="clig">
+                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
+            </p>
+        </div>
+        <input type=radio id="article-1-close" class="close" name=pages>
+    </article>
+    <article>
+        <label for="article-2-open">
+            <img src="images/Audio Icon Square Black On Yellow.svg">
+        </label>
+        <input type=radio id="article-2-open" class="open" name=pages>
+        <div class="article-content">
+            <label for="article-1-close">
+                Close
             </label>
-            <input type=radio id="article-2-open" class="open" name=pages>
-            <div class="article-content">
+        </div>
+    </article>
+</section>
+<section class="play">
+    <p>#play</p>
+    <article>
+        <label for="article-2-open">
+            <img src='images/YouTube-logo-full_color.svg'>
+        </label>
+        <input type=radio id="article-2-open" class="open" name=pages>
+        <div class="article-content">
             <label for="article-2-close">
                 Close
             </label>
-            </div>
-            <input type=radio id="article-2-close" class="close" name=pages>
-        </article>
-    </section>
+        </div>
+        <input type=radio id="article-2-close" class="close" name=pages>
+    </article>
+</section>
+<script src="js/youTubeBackground.js" type="application/javascript"></script>
 </body>
 </html>

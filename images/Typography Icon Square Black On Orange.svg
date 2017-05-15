@@ -1,18 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
   <defs>
     <style>
-      .cls-1 {
-        fill: #ff0;
-      }
-
       .cls-2 {
         fill: #f7931e;
       }
+        #Foreground:hover{
+            
+        
     </style>
   </defs>
   <title>Typography Icon Square Black On Orange</title>
   <g id="Background">
-    <rect class="cls-1" width="500" height="500"/>
     <rect class="cls-2" width="500" height="500"/>
   </g>
   <g id="Foreground">

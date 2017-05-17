@@ -96,6 +96,7 @@
     </fieldset>
     <fieldset id='filter1'>
         <legend>Filter</legend>
+        <canvas id='filterVisualiser' width='500' height='200'></canvas>
         <div class='span-6'>
             <div class='control-group'>
                 <label for='filter1frequency'>Filter frequency</label>
@@ -291,13 +292,13 @@
     })
 </script>
 <script>
-    if ('serviceWorker' in navigator) {
+    /*if ('serviceWorker' in navigator) {
         navigator.serviceWorker
             .register('./../service-worker.js')
             .then(function(worker) {
                     console.log('Service Worker Registered: ' + worker.scope); 
             });
-    }
+    }*/
 </script>
 </body>
 </html>

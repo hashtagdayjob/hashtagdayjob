@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html, body{
+                height: 100%
+            }
+        </style>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
+    </head>
+    <body>
+    <div id='map' style='width: 100%; height: 100%;'></div>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibmlnZWxqb2hud2FkZSIsImEiOiJjajJnNmxnMG4wMDVuMnFuejhramFpb215In0.xXH0RlgYBtoujWpfI-O7_w';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/nigeljohnwade/cj2g6patn00d52srtk7if7mad',
+        center: [-3.182, 55.961], // starting position
+        zoom: 11, // starting zoom
+    });
+    </script>
+    </body>
+</html>

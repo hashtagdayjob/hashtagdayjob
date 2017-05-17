@@ -109,42 +109,59 @@ requirejs(['audioContext'], function(audioContext){
         canvasCtx.lineTo(canvas.width, canvas.height / 2);
         canvasCtx.stroke();
     }
-    
+    var filterCanvas = document.querySelector("#filter1 canvas");
+    window.filterCanvasCtx = filterCanvas.getContext("2d"); 
     window.drawFilterResponse = function(filter){
-        var width = 500;
+        const width = filterCanvasCtx.canvas.width;
+        const height = filterCanvasCtx.canvas.height;
         var noctaves = 8;
         var sampleRate = 44100.0;
         var nyquist = 0.5 * sampleRate;
         var freq = new Float32Array(width);
         var magResponse = new Float32Array(width);
         var phaseResponse = new Float32Array(width);
-
-
         for (var k = 0; k < width; ++k) {
             var f = k / width;
             // Convert to log frequency scale (octaves).
             f = Math.pow(2.0, noctaves * (f - 1.0));
             freq[k] = f * nyquist;
         }
-
-        filter.getFrequencyResponse(freq, magResponse, phaseResponse);
-
+        filter1.getFrequencyResponse(freq, magResponse, phaseResponse);
         var magData = [];
         var phaseData = [];
-
         for (var k = 0; k < width; ++k) {
             db = 20.0 * Math.log(magResponse[k])/Math.LN10;
             phaseDeg = 180 / Math.PI * phaseResponse[k];
             magData.push([freq[k] , db]);
             phaseData.push([freq[k], phaseDeg]);
         }
+        filterCanvasCtx.fillStyle = 'rgb(0, 0, 0)';
+        filterCanvasCtx.fillRect(0, 0, width, height);
+        filterCanvasCtx.lineWidth = 1;
+        filterCanvasCtx.strokeStyle = 'rgb(0, 255, 0)';
+        filterCanvasCtx.beginPath();
+        var x = 0;
+        scale = 0.2;
+        for(var i = 0; i < width; i++){
+            var y = (magResponse[i] * (height/2)) + (height/2);
+            if(i === 0) {
+              filterCanvasCtx.moveTo(i, height - (y * scale));
+            } else {
+              filterCanvasCtx.lineTo(i, height - (y * scale));
+            }
+            console.log(i,y);
+        }
+        filterCanvasCtx.lineTo(filterCanvas.width, filterCanvas.height/2);
+        filterCanvasCtx.stroke();
         console.log(freq, magResponse, phaseResponse);
     }
     window.animateDisplay = function(){
         canvasCtx.clearRect(0, 0, canvasCtx.canvas.width, canvasCtx.canvas.height);
         drawFrequencyGraph();
         drawWaveform();
+        drawFilterResponse();
         requestAnimationFrame(animateDisplay);
+
     }
     animateDisplay();
 });

@@ -1,1 +1,33 @@
-body>h1{background-image:url('../images/web_header.svg')}
+:root{
+    --typographybackground: #f7931e;
+    --audiobackground: #ff0;
+    --youtubebackground: white;
+}
+.fluid-type {
+    font-size: 14px;
+}
+.fluid-type p {
+    max-width: 60ch;
+    line-height: 1.35;
+}
+
+@media screen and (min-width: 320px) {
+    .fluid-type {
+        font-size: calc(14px + 8 * ((100vw - 320px) / 960));
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .fluid-type {
+        font-size: 22px;
+    }
+}
+.typography{
+    background-color: var(--typographybackground);
+}
+.audio{
+    background-color: var(--audiobackground);
+}
+.youtube{
+    background-color: var(--youtubebackground);
+}

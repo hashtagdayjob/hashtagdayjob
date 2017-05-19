@@ -28,6 +28,23 @@
 .audio{
     background-color: var(--audiobackground);
 }
-.youtube{
+.youTube{
     background-color: var(--youtubebackground);
+}
+
+.youTubeBackgroundWrapper{
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.youTube iframe{
+    width:100%;
+    height: 100%
+}
+.youTube .article-content label{
+    position: absolute;
+    top: 0;
+    left: 0;
 }

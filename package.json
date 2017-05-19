@@ -2,8 +2,5 @@
   "name": "hashtagdayjob",
   "version": "0.0.0",
   "description": "Website for hashtagdayjob.co.uk",
-  "author": "Nigel Wade",
-  "devDependencies": {
-    "grunt": "^0.4.5"
-  }
+  "author": "Nigel Wade"
 }

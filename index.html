@@ -97,24 +97,6 @@
         input.close:checked ~ div.article-content{
             display: block;
         }
-        /*iframe {*/
-        /*position: absolute;*/
-        /*z-index: -1;*/
-        /*}*/
-        video {
-            position: absolute;
-            z-index: -1;
-            height: 100vh;
-            width: 100vw;
-            object-fit: cover;
-        }
-        .app-youTubeBackgroundWrapper{
-            position: absolute;
-            z-index: -1;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-        }
     </style>
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <!-- Typekit -->
@@ -124,8 +106,8 @@
 </head>
 
 <body>
-<div class="app-youTubeBackgroundWrapper">
-    <iframe  width="560" height="315" class="app-youTubeBackground" src="https://www.youtube.com/embed?autoplay=1&constrols=0&disablekb=1&loop=1&listType=playlist&list=PLHoIUe34icAoz8Rg9IFne8qfJR1DgIMYQ" frameborder="0" allowfullscreen autoplay></iframe>
+<div class="app-youTubeBackgroundIndexWrapper youTubeBackgroundWrapper">
+    <iframe  width="560" height="315" class="app-youTubeBackgroundIndex" src="https://www.youtube.com/embed?autoplay=1&constrols=0&disablekb=1&loop=1&listType=playlist&list=PLHoIUe34icAoz8Rg9IFne8qfJR1DgIMYQ" frameborder="0" allowfullscreen autoplay></iframe>
 </div>
 <!--<video src="videos/KaleidaShineComposite.mp4" autoplay autostart></video>-->
 <h1>
@@ -203,19 +185,23 @@
 </section>
 <section class="play">
     <p>#play</p>
-    <article class="youtube">
-        <label for="article-2-open">
+    <article class="youTube">
+        <label for="article-3-open">
             <img src='images/YouTube-logo-full_color.svg'>
         </label>
-        <input type=radio id="article-2-open" class="open" name=pages>
+        <input type=radio id="article-3-open" class="open" name=pages>
         <div class="article-content">
-            <label for="article-2-close">
+            <iframe class="app-youTubeBackgroundChannel" src="https://www.youtube.com/embed/videoseries?list=PLHoIUe34icApZcz1tqiIGyyE_en4GMPwH" frameborder="0" allowfullscreen></iframe>
+            <label for="article-3-close">
                 Close
             </label>
         </div>
-        <input type=radio id="article-2-close" class="close" name=pages>
+        <input type=radio id="article-3-close" class="close" name=pages>
     </article>
 </section>
 <script src="js/youTubeBackground.js" type="application/javascript"></script>
+<script type="application/javascript">
+    indexYoutube = youTubeBackground.init('.app-youTubeBackgroundIndex');
+</script>
 </body>
 </html>

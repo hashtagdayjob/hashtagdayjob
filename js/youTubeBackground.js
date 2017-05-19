@@ -1,7 +1,7 @@
 const youTubeBackground = {
-    init: function(){
-        this.element = document.querySelector('.app-youTubeBackground');
-        this.elementWrapper = document.querySelector('.app-youTubeBackgroundWrapper');
+    init: function(selector){
+        this.element = document.querySelector(selector);
+        this.elementWrapper = document.querySelector(`${selector}Wrapper`);
         this.youTubeBackgroundWidth = this.element.clientWidth;
         this.youTubeBackgroundHeight = this.element.clientHeight;
         this.heightScale = this.viewportHeight()/this.youTubeBackgroundHeight;
@@ -38,4 +38,3 @@ const youTubeBackground = {
         console.dir(youTubeBackground.element);
     }
 }
-youTubeBackground.init();

@@ -14,42 +14,103 @@
         <link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
     </head>
     <body>
+    <div id="error"></div>
     <div id='map' style='width: 100%; height: 100%;'></div>
     <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoibmlnZWxqb2hud2FkZSIsImEiOiJjajJnNmxnMG4wMDVuMnFuejhramFpb215In0.xXH0RlgYBtoujWpfI-O7_w';
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/nigeljohnwade/cj2g6patn00d52srtk7if7mad',
-        center: [-3.182, 55.961],
-        zoom: 20,
-        pitch: 60
-    });
-    // the 'building' layer in the mapbox-streets vector source contains building-height
-    // data from OpenStreetMap.
-    map.on('load', function() {
-        map.addLayer({
-            'id': '3d-buildings',
-            'source': 'composite',
-            'source-layer': 'building',
-            'filter': ['==', 'extrude', 'true'],
-            'type': 'fill-extrusion',
-            'minzoom': 15,
-            'paint': {
-                'fill-extrusion-color': '#aaa',
-                'fill-extrusion-height': {
-                    'type': 'identity',
-                    'property': 'height'
-                },
-                'fill-extrusion-base': {
-                    'type': 'identity',
-                    'property': 'min_height'
-                },
-                'fill-extrusion-opacity': .6
+
+        function geo(){
+            //geo attributes
+            this.position;
+            this.coords;
+        }
+
+        geo.prototype.testForGeo = function(){
+            try{
+                if(!!navigator.geolocation){
+                    this.geo = navigator.geolocation;
+                    return 'Geolocation';
+                }else{
+                    return 'No Geolocation';
+                }
+            }catch(e){
+                return e;
             }
-        });
-    });
-    // Add zoom and rotation controls to the map.
-    map.addControl(new mapboxgl.NavigationControl());
+        }
+
+
+        geo.prototype.getPosition = function(){
+            Geo.position = this.geo.getCurrentPosition(Geo.savePosition,Geo.errorPosition,{enableHighAccuracy:true, timeout: 60000, maximumAge: 5000});
+        }
+
+        geo.prototype.watchPosition = function(){
+            Geo.position = this.geo.watchPosition(Geo.savePosition,Geo.errorPosition,{enableHighAccuracy:true, timeout: 60000, maximumAge: 5000});
+        }
+
+        geo.prototype.savePosition = function(position){
+            Geo.coords = {
+                "timestamp" : position.timestamp,
+                "longitude" : position.coords.longitude,
+                "latitude": position.coords.latitude,
+                "accuracy": position.coords.accuracy,
+                "altitude": position.coords.altitude
+            }
+            mapboxgl.accessToken = 'pk.eyJ1IjoibmlnZWxqb2hud2FkZSIsImEiOiJjajJnNmxnMG4wMDVuMnFuejhramFpb215In0.xXH0RlgYBtoujWpfI-O7_w';
+            Geo.map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/outdoors-v10',
+                center: [Geo.coords.longitude, Geo.coords.latitude],
+                zoom: 20,
+                pitch: 60
+            });
+            // the 'building' layer in the mapbox-streets vector source contains building-height
+            // data from OpenStreetMap.
+            Geo.map.on('load', function() {
+                Geo.map.addLayer({
+                    'id': '3d-buildings',
+                    'source': 'composite',
+                    'source-layer': 'building',
+                    'type': 'fill-extrusion',
+                    'minzoom': 15,
+                    'paint': {
+                        'fill-extrusion-color': '#aaa',
+                        'fill-extrusion-height': {
+                            'type': 'identity',
+                            'property': 'height'
+                        },
+                        'fill-extrusion-base': {
+                            'type': 'identity',
+                            'property': 'min_height'
+                        },
+                        'fill-extrusion-opacity': .6
+                    }
+                });
+            });
+            // Add zoom and rotation controls to the map.
+            Geo.map.addControl(new mapboxgl.NavigationControl());
+        }
+        geo.prototype.errorPosition = function(error){
+            switch(error.code){
+                case 1:
+                    document.getElementById('error').innerHTML = 'Permission Denied';
+                    break;
+                case 2:
+                    document.getElementById('error').innerHTML = 'Position Unavailable';
+                    break;
+                case 3:
+                    document.getElementById('error').innerHTML = 'Request Timed Out';
+                    break;
+                default:
+                    alert(error.code + ' - ' + error.message);
+                    break;
+            }
+        }
+
+        var Geo = new geo();
+        if(Geo.testForGeo()){
+            Geo.getPosition();            
+        }
+
+
     </script>
     </body>
 </html>

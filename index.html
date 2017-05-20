@@ -109,7 +109,6 @@
 <div class="app-youTubeBackgroundIndexWrapper youTubeBackgroundWrapper">
     <iframe  width="560" height="315" class="app-youTubeBackgroundIndex" src="https://www.youtube.com/embed?autoplay=1&constrols=0&disablekb=1&loop=1&listType=playlist&list=PLHoIUe34icAoz8Rg9IFne8qfJR1DgIMYQ" frameborder="0" allowfullscreen autoplay></iframe>
 </div>
-<!--<video src="videos/KaleidaShineComposite.mp4" autoplay autostart></video>-->
 <h1>
     <img src='images/web_header.svg' alt='HashtagDayjob Ltd: UI / UX / You got It'>
 </h1>
@@ -186,20 +185,23 @@
 <section class="play">
     <p>#play</p>
     <article class="youTube">
-        <label for="article-3-open">
+        <label for="article-3-open" onclick="youTubeIframeApi('player', 'PLHoIUe34icApZcz1tqiIGyyE_en4GMPwH')">
             <img src='images/YouTube-logo-full_color.svg'>
         </label>
         <input type=radio id="article-3-open" class="open" name=pages>
         <div class="article-content">
-            <iframe class="app-youTubeBackgroundChannel" src="https://www.youtube.com/embed/videoseries?list=PLHoIUe34icApZcz1tqiIGyyE_en4GMPwH" frameborder="0" allowfullscreen></iframe>
-            <label for="article-3-close">
+            <label for="article-3-close" onclick="">
                 Close
             </label>
+            <p class="description"></p>
+            <div id="player"></div>
         </div>
         <input type=radio id="article-3-close" class="close" name=pages>
     </article>
 </section>
+<script src="js/ajaxUtilities.js" type="application/javascript"></script>
 <script src="js/youTubeBackground.js" type="application/javascript"></script>
+<script src="js/youTubeIframeApi.js" type="application/javascript"></script>
 <script type="application/javascript">
     indexYoutube = youTubeBackground.init('.app-youTubeBackgroundIndex');
 </script>

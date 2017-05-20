@@ -41,7 +41,9 @@
 }
 .youTube iframe{
     width:100%;
-    height: 100%
+    height: 80%;
+    position: absolute;
+    bottom: 10%;
 }
 .youTube .article-content label{
     position: absolute;

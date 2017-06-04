@@ -6,7 +6,7 @@
 .fluid-type {
     font-size: 14px;
 }
-.fluid-type p {
+.fluid-type > * {
     max-width: 60ch;
     line-height: 1.35;
 }

@@ -2,6 +2,9 @@
     --typographybackground: #f7931e;
     --audiobackground: #ff0;
     --youtubebackground: white;
+    --codepenbackground: black;
+    --soundcloudbackground: white;
+    --reasonbackground: white;
 }
 .fluid-type {
     font-size: 14px;
@@ -28,10 +31,18 @@
 .audio{
     background-color: var(--audiobackground);
 }
+.reason{
+    background-color: var(--reasonbackground);
+}
 .youTube{
     background-color: var(--youtubebackground);
 }
-
+.soundcloud{
+    background-color: var(--soundcloudbackground);
+}
+.codepen{
+    background-color: var(--codepenbackground);
+}
 .youTubeBackgroundWrapper{
     position: absolute;
     z-index: -1;

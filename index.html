@@ -74,29 +74,6 @@
             width: 100%;
             height: 100%;
         }
-        div.article-content{
-            display: none;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            bottom: 0px;
-            right: 0px;
-            background-color: rgb(64, 64, 64);
-            z-index: 1;
-        }
-        input{
-            opacity: 0;
-            height: 0px;
-            position: absolute;
-        }
-        input.open:checked ~ div.article-content{
-            display: block;
-        }
-        input.close:checked ~ div.article-content{
-            display: block;
-        }
     </style>
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <!-- Typekit -->
@@ -124,46 +101,32 @@
             <img src="images/Audio Icon Square Black On Yellow.svg">
         </a>
     </article>
-    <article class="audio">
+    <article class="reason">
         <a href="/articles/reason_patches.html">
-            <img src="images/Audio Icon Square Black On Yellow.svg">
+            <img src="images/Reason.svg">
         </a>
     </article>
 </section>
 <section class="play">
     <p>#play</p>
     <article class="youTube">
-        <label for="article-3-open" onclick="youTubeIframeApi('player', 'PLHoIUe34icApZcz1tqiIGyyE_en4GMPwH')">
+        <a href="articles/youtube_channel" onclick="youTubeIframeApi('player', 'PLHoIUe34icApZcz1tqiIGyyE_en4GMPwH')">
             <img src='images/YouTube-logo-full_color.svg'>
-        </label>
-        <input type=radio id="article-3-open" class="open" name=pages>
-        <div class="article-content">
-            <label for="article-3-close" onclick="youTubeIframeApiStopVideo('player')">
-                Close
-            </label>
-            <p class="description"></p>
-            <div id="player"></div>
-        </div>
-        <input type=radio id="article-3-close" class="close" name=pages>
+        </a>
     </article>
     <article class="codepen">
-        <label for="article-4-open" onclick="rssReader('https://codepen.io/collection/AZBreY/feed')">
+        <a href="articles/codepen_collection.html-4-open" onclick="rssReader('https://codepen.io/collection/AZBreY/feed')">
             <img src='images/codepen.svg' style="width:80%;margin: auto">
-        </label>
-        <input type=radio id="article-4-open" class="open" name=pages>
-        <div class="article-content">
-            <label for="article-4-close">
-                Close
-            </label>
-            <p class="description"></p>
-            <div id="player"></div>
-        </div>
-        <input type=radio id="article-4-close" class="close" name=pages>
+        </a>
+    </article>
+    <article class="soundcloud">
+        <a href="/articles/soundcloud.html">
+            <img src="images/soundcloud_logo.svg" style="width: 80%;margin:auto;">
+        </a>
     </article>
 </section>
 <script src="js/ajaxUtilities.js" type="application/javascript"></script>
 <script src="js/youTubeBackground.js" type="application/javascript"></script>
-<script src="js/youTubeIframeApi.js" type="application/javascript"></script>
 <script src="js/rssReader.js" type="application/javascript"></script>
 <script type="application/javascript">
     indexYoutube = youTubeBackground.init('.app-youTubeBackgroundIndex');

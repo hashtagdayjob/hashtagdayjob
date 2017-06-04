@@ -32,7 +32,7 @@ var ajaxUtilities = {
                     break;
                 case XMLHttpRequest.DONE:
                     var _data = null;
-                    if(this.getResponseHeade && this.getResponseHeader("Content-Type").split(';')[0] === "application/json"){
+                    if(this.getResponseHeader("Content-Type") && this.getResponseHeader("Content-Type").split(';')[0] === "application/json"){
                         _data = JSON.parse(this.response);
                     }
                     callbacks && callbacks.done && callbacks.done(this, _data);

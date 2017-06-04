@@ -115,49 +115,9 @@
 <section class="work">
     <p>#work</p>
     <article class="typography">
-        <label for="article-1-open">
+        <a href="articles/typography_opentype.html">
             <img src='images/Typography Icon Square Black On Orange.svg'>
-        </label>
-        <input type=radio id="article-1-open" class="open" name=pages>
-        <div class="article-content fluid-type">
-            <label for="article-1-close">
-                Close
-            </label>
-            <h2>Plain</h2>
-            <p>
-                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-            </p>
-            <h2>Swash</h2>
-            <p class="swsh">
-                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-            </p>
-
-            <h2>Stylistic Alternatives</h2>
-            <p class="salt">
-                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-            </p>
-
-            <h2>Small Caps</h2>
-            <p class="smcp">
-                Cras PHARETRA semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-            </p>
-
-            <h2>Contextual Alternates</h2>
-            <p class="calt">
-                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-            </p>
-
-            <h2>Discretionary Ligatures</h2>
-            <p class="dlig">
-                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-            </p>
-
-            <h2>Common Ligatures</h2>
-            <p class="clig">
-                Cras pharetra semper nunc, at tempus sem ultrices nec. Cras laoreet orci non sem molestie, in varius neque dictum. Nullam pretium lorem sit amet elit ornare bibendum. Maecenas in est sollicitudin, facilisis sem quis, imperdiet orci. Aliquam luctus magna eget purus tristique accumsan. Pellentesque ultricies vestibulum tellus at euismod. Aliquam sit amet mattis dui. Donec laoreet sapien erat, at egestas massa pretium at.
-            </p>
-        </div>
-        <input type=radio id="article-1-close" class="close" name=pages>
+        </a>
     </article>
     <article class="audio">
         <label for="article-2-open">
@@ -190,7 +150,7 @@
         </label>
         <input type=radio id="article-3-open" class="open" name=pages>
         <div class="article-content">
-            <label for="article-3-close" onclick="">
+            <label for="article-3-close" onclick="youTubeIframeApiStopVideo('player')">
                 Close
             </label>
             <p class="description"></p>
@@ -198,10 +158,25 @@
         </div>
         <input type=radio id="article-3-close" class="close" name=pages>
     </article>
+    <article class="codepen">
+        <label for="article-4-open" onclick="rssReader('https://codepen.io/collection/AZBreY/feed')">
+            <img src='images/codepen.svg' style="width:80%;margin: auto">
+        </label>
+        <input type=radio id="article-4-open" class="open" name=pages>
+        <div class="article-content">
+            <label for="article-4-close">
+                Close
+            </label>
+            <p class="description"></p>
+            <div id="player"></div>
+        </div>
+        <input type=radio id="article-4-close" class="close" name=pages>
+    </article>
 </section>
 <script src="js/ajaxUtilities.js" type="application/javascript"></script>
 <script src="js/youTubeBackground.js" type="application/javascript"></script>
 <script src="js/youTubeIframeApi.js" type="application/javascript"></script>
+<script src="js/rssReader.js" type="application/javascript"></script>
 <script type="application/javascript">
     indexYoutube = youTubeBackground.init('.app-youTubeBackgroundIndex');
 </script>

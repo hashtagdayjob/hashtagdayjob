@@ -5,6 +5,12 @@
     --codepenbackground: black;
     --soundcloudbackground: white;
     --reasonbackground: white;
+    --bodybackground: black;
+    --typecolor: white;
+}
+body{
+    background-color: var(--bodybackground);
+    color: var(--typecolor);
 }
 .fluid-type {
     font-size: 14px;

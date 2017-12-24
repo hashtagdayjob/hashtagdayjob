@@ -18,9 +18,14 @@ function youTubeIframeApi(id, playlist) {
     };
 
     function onPlayerReady(event) {
-        console.dir(event.target.a);
         let a = event.target.a;
-        console.log(a.clientWidth / a.clientHeight);
+        let b = document.querySelector('.player-wrapper');
+        let aspectRatio = a.clientWidth / a.clientHeight;
+        let orientation = aspectRatio < 1 ? 'portrait' : 'landscape';
+        let scale = (aspectRatio === 'landscape') ? b.clientHeight / a.clientHeight: b.clientWidth / a.clientWidth;
+        console.log(scale);
+        a.height = a.clientHeight * scale;
+        a.width = a.clientWidth * scale;
         event.target.cuePlaylist({listType: 'playlist', list: playlist});
         event.target.playVideo();
     }

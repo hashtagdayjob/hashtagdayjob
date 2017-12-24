@@ -18,6 +18,9 @@ function youTubeIframeApi(id, playlist) {
     };
 
     function onPlayerReady(event) {
+        console.dir(event.target.a);
+        let a = event.target.a;
+        console.log(a.clientWidth / a.clientHeight);
         event.target.cuePlaylist({listType: 'playlist', list: playlist});
         event.target.playVideo();
     }
@@ -31,7 +34,7 @@ function youTubeIframeApi(id, playlist) {
             ajaxUtilities.create(
                 `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=AIzaSyDi1ioaq5tWNtQQiZuL9GiRx5SpW6OXtJg`,
                 {done: function(xhr, data){
-                    event.target.a.parentNode.querySelector('.description').innerText = data.items[0].snippet.description;
+                    event.target.a.parentNode.parentNode.querySelector('.description').innerText = data.items[0].snippet.description;
                     console.log(xhr);
                     }
                 },

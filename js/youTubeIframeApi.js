@@ -23,9 +23,10 @@ function youTubeIframeApi(id, playlist) {
         let aspectRatio = a.clientWidth / a.clientHeight;
         let orientation = aspectRatio < 1 ? 'portrait' : 'landscape';
         let scale = (aspectRatio === 'landscape') ? b.clientHeight / a.clientHeight: b.clientWidth / a.clientWidth;
+        let maxScale = b.clientHeight / a.clientHeight;
         console.log(scale);
-        a.height = a.clientHeight * scale;
-        a.width = a.clientWidth * scale;
+        a.height = a.clientHeight * Math.min(maxScale, scale);
+        a.width = a.clientWidth * Math.min(maxScale, scale);
         event.target.cuePlaylist({listType: 'playlist', list: playlist});
         event.target.playVideo();
     }

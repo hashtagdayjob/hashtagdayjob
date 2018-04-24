@@ -1,0 +1,86 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=ce70fdfe-1ff8-4978-9b4b-98a4b723ff7e");
+@font-face{
+    font-family:"Helvetica LT W01 Roman";
+    src:url("Fonts/05598d95-f297-4c7f-a825-ab617e7e045f.eot?#iefix");
+    src:url("Fonts/05598d95-f297-4c7f-a825-ab617e7e045f.eot?#iefix") format("eot"),url("Fonts/89294146-207c-4803-91fe-338f0d0094bd.woff2") format("woff2"),url("Fonts/57055fe4-c2d3-4287-bac2-eece43fdcbd3.woff") format("woff"),url("Fonts/2922d55c-8df4-4066-b7b0-eec2d1524330.ttf") format("truetype"),url("Fonts/f8343ddf-e94d-471e-95b0-3b435acc2499.svg#f8343ddf-e94d-471e-95b0-3b435acc2499") format("svg");
+}
+@font-face{
+    font-family:"Helvetica LT W01 Bold";
+    src:url("Fonts/05f47e74-d17c-45af-86c3-8ab878fd4ec7.eot?#iefix");
+    src:url("Fonts/05f47e74-d17c-45af-86c3-8ab878fd4ec7.eot?#iefix") format("eot"),url("Fonts/7ce0a2f5-eb00-46aa-919c-5b3f3667646c.woff2") format("woff2"),url("Fonts/cad22c74-45b4-4c49-9e6a-0cd3768a7bc7.woff") format("woff"),url("Fonts/8ebb9b04-d12d-488e-aa96-0bb6e6777336.ttf") format("truetype"),url("Fonts/7672ef16-fedc-4b60-8337-04b537a6ada5.svg#7672ef16-fedc-4b60-8337-04b537a6ada5") format("svg");
+}
+@font-face{
+    font-family:"Helvetica LT W01 Bold Cond";
+    src:url("Fonts/4834c70d-196c-47f6-bfd5-11e5d2e2f65c.eot?#iefix");
+    src:url("Fonts/4834c70d-196c-47f6-bfd5-11e5d2e2f65c.eot?#iefix") format("eot"),url("Fonts/cc8baf39-7363-4096-9272-744ba5d42550.woff2") format("woff2"),url("Fonts/c3e64e07-d679-43dc-982a-6d21239f752e.woff") format("woff"),url("Fonts/b4e439ff-23ab-4b99-ae1e-1ba93635751e.ttf") format("truetype"),url("Fonts/045f30a1-52fd-4914-9cfb-32fe35e60b35.svg#045f30a1-52fd-4914-9cfb-32fe35e60b35") format("svg");
+}
+:root{
+    --brand: rgb(139, 205, 203);
+    --black: rgb(28, 28, 27);
+    --grey: rgb(60, 60, 59);
+}
+html, form, input, select, option, textarea{
+    font-family: "Helvetica LT W01 Roman";
+    font-size: 16px;
+}
+html{
+    background-color: var(--brand);
+    color: var(--black);
+}
+.brand-header{
+    padding-top: 176px;
+    background-image: url('Zonal.png');
+    background-repeat: no-repeat;
+    background-position: 32px 32px;
+    background-color: white;
+}
+form{
+    padding: 32px;
+    background-color: white;
+}
+input, select, textarea, .rc-calendar{
+    margin-bottom: 16px;
+    font-size: 1em;
+    border-color: var(--grey);
+    border-width: 1px;
+}
+
+input, select, textarea, option{
+    padding: 4px;
+}
+
+input[type="submit"]{
+    background-color: var(--brand);
+    border: none;
+    color: white;
+    font-family: "Helvetica LT W01 Bold Cond";
+    font-size: 2em;
+    margin-top: 16px;
+}
+.boolean-input{
+    display: inline-block;
+    width: auto;
+    margin-left: 12px;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+.rc-calendar-selected-day .rc-calendar-date, .rc-calendar-selected-day.rc-calendar-today .rc-calendar-date{
+    background-color: var(--brand);
+}
+.rc-calendar-today .rc-calendar-date{
+    border-color: var(--brand);
+    background-color: #FFF;
+}
+.rc-calendar-selected-date .rc-calendar-date:hover{
+    background-color: var(--brand);
+}
+.capacity-option-wrapper{
+    overflow: hidden;
+}
+.capacity-option{
+    float: left;
+    width: 33%;
+    padding: 12px;
+    border: 1px solid var(--grey);
+    word-wrap: break-word;
+}

@@ -1,6 +1,10 @@
 class RadialGradientPainter {
     static get inputProperties() {
-        return ['border-top-color', 'border-bottom-color'];
+        return [
+            'border-top-color',
+            'border-bottom-color',
+            '--background-opacity'
+        ];
     }
 
     paint(ctx, size, props) {

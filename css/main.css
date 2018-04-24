@@ -83,8 +83,24 @@ body{
 .radial-gradient {
     width: 200px;
     height: 200px;
-    border-top-color: red;
-    border-bottom-color: green;
+    border-top-color: rgba(255, 0, 0, 0.1);
+    border-bottom-color: rgba(0, 255, 0, 0.1);
     background-image: paint(radial-gradient);
-    --background-opacity: 0.4;
+    animation: pulse-top-border 3s alternate infinite, pulse-bottom-border 3s alternate infinite;
+}
+@keyframes pulse-top-border {
+    0% {
+        border-top-color: rgba(255, 0, 0, 0); 
+    }
+    100% {
+        border-top-color: rgba(255, 0, 0, 1);
+    }
+}
+@keyframes pulse-bottom-border {
+    0% {
+        border-bottom-color: rgba(0, 255, 0, 1);
+    }
+    100% {
+        border-bottom-color: rgba(0, 255, 0, 0);
+    }
 }

@@ -3,7 +3,6 @@ class RadialGradientPainter {
         return [
             'border-top-color',
             'border-bottom-color',
-            '--background-opacity'
         ];
     }
 
@@ -18,13 +17,12 @@ class RadialGradientPainter {
         );
         const stops = [
             [0, props.get('border-top-color')],
-            [0.4, props.get('border-bottom-color')],
-            [1, props.get('border-top-color')]
+            [1, props.get('border-bottom-color')]
         ];
         stops.map((element) => {
             gradient.addColorStop(element[0], element[1]);
         });
-        ctx.rect(0, 0, size.height, size.width);
+        ctx.rect(0, 0, size.width, size.height);
         ctx.fillStyle = gradient;
         ctx.fill();
     }

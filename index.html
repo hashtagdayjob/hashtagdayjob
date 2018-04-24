@@ -29,46 +29,48 @@
             height: 100%;
             padding: 0;
             margin:0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             background-color: black;
             font-family: 'proxima-nova-extra-condensed';
+        }
+        main{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-rows: 33% 33% 33%;
         }
         h1{
             width: 100%;
             height: 33%;
             min-height: 200px;
-            order: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 5;
         }
         h1 img{
             width: 100%;
             max-height: 100%;
         }
         section{
-            height: 33%;
             width: 100%;
             min-height: 200px;
             color: white;
             background-color: black;
-            display: flex;
-            flex-direction: row-reverse;
-            align-items: stretch;
+            display: contents;
             overflow: hidden;
         }
-        section.play{
-            flex-direction: row;
-        }
-        article{
-            width: 25%;
-            height: 100%;
-        }
         .work{
-            order: 1;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
         }
         .play{
-            order: 3;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 4;
         }
         .work > p, .play > p{
             position: absolute;
@@ -115,45 +117,47 @@
     <div class="app-youTubeBackgroundIndexWrapper youTubeBackgroundWrapper">
         <iframe title="Youtube background video" width="560" height="315" class="app-youTubeBackgroundIndex" src="https://www.youtube.com/embed?autoplay=1&constrols=0&disablekb=1&loop=1&listType=playlist&list=PLHoIUe34icAoz8Rg9IFne8qfJR1DgIMYQ" frameborder="0" allowfullscreen autoplay></iframe>
     </div>
-    <h1>
-        <img src='images/web_header.svg' alt='HashtagDayjob Ltd: UI / UX / You got It'>
-    </h1>
-    <section class="work">
-        <p>#work</p>
-        <article class="typography">
-            <a href="articles/typography_opentype.html">
-                <img src='images/Typography Icon Square Black On Orange.svg' alt="Typography">
-            </a>
-        </article>
-        <article class="audio">
-            <a href="/AudioContext/index.html">
-                <img src="images/Audio Icon Square Black On Yellow.svg" alt="Web Audio">
-            </a>
-        </article>
-        <article class="reason">
-            <a href="/articles/reason_patches.html">
-                <img src="images/Reason.svg" alt="Reason patches and stuff">
-            </a>
-        </article>
-    </section>
-    <section class="play">
-        <p>#play</p>
-        <article class="youTube">
-            <a href="articles/youtube_channel.html">
-                <img src='images/YouTube-logo-full_color.svg' alt="Youtube channel videos">
-            </a>
-        </article>
-        <article class="codepen">
-            <a href="articles/codepen_collection.html">
-                <img src='images/codepen.svg' style="width:80%;margin: auto" alt="Codepen demos and stuff">
-            </a>
-        </article>
-        <article class="soundcloud">
-            <a href="/articles/soundcloud.html">
-                <img src="images/soundcloud_logo.svg" style="width: 80%;margin:auto;" alt="Soundcloud playlist">
-            </a>
-        </article>
-    </section>
+    <main role="main">
+        <h1>
+            <img src='images/web_header.svg' alt='HashtagDayjob Ltd: UI / UX / You got It'>
+        </h1>
+        <section class="work">
+            <p>#work</p>
+            <article class="typography">
+                <a href="articles/typography_opentype.html">
+                    <img src='images/Typography Icon Square Black On Orange.svg' alt="Typography">
+                </a>
+            </article>
+            <article class="audio">
+                <a href="/AudioContext/index.html">
+                    <img src="images/Audio Icon Square Black On Yellow.svg" alt="Web Audio">
+                </a>
+            </article>
+            <article class="reason">
+                <a href="/articles/reason_patches.html">
+                    <img src="images/Reason.svg" alt="Reason patches and stuff">
+                </a>
+            </article>
+        </section>
+        <section class="play">
+            <p>#play</p>
+            <article class="youTube">
+                <a href="articles/youtube_channel.html">
+                    <img src='images/YouTube-logo-full_color.svg' alt="Youtube channel videos">
+                </a>
+            </article>
+            <article class="codepen">
+                <a href="articles/codepen_collection.html">
+                    <img src='images/codepen.svg' style="width:80%;margin: auto" alt="Codepen demos and stuff">
+                </a>
+            </article>
+            <article class="soundcloud">
+                <a href="/articles/soundcloud.html">
+                    <img src="images/soundcloud_logo.svg" style="width: 80%;margin:auto;" alt="Soundcloud playlist">
+                </a>
+            </article>
+        </section>
+    </main>
     <script src="js/ajaxUtilities.js" type="application/javascript"></script>
     <script src="js/youTubeBackground.js" type="application/javascript"></script>
     <script src="js/rssReader.js" type="application/javascript"></script>

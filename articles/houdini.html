@@ -35,7 +35,7 @@
                     return element.match(/--animation-tick/);
                 });
                 rules[found] = "--animation-tick:" + parseInt(t);
-                element.style.cssText = rules.join(':');
+                element.style.cssText = rules.join(';');
             })
             window.requestAnimationFrame(updateAnimationTick);
         }

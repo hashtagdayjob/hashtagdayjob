@@ -88,6 +88,18 @@ body{
     background-image: paint(radial-gradient);
     animation: pulse-top-border 3s alternate infinite, pulse-bottom-border 3s alternate infinite;
 }
+.ripple {
+    width: 200px;
+    height: 200px;
+    --ripple-x: 0;
+    --ripple-y: 0;
+    --ripple-color: rgba(255,255,255,0.5);
+    --gradient: linear-gradient(to bottom right, deeppink, orangered);
+    background: var(--gradient);
+}
+.ripple.animating {
+    background: paint(ripple), var(--gradient);
+}
 @keyframes pulse-top-border {
     0% {
         border-top-color: rgba(255, 0, 0, 0); 

@@ -2,7 +2,9 @@ class RadialGradientPainter {
     static get inputProperties() {
         return [
             'border-top-color',
+            'border-right-color',
             'border-bottom-color',
+            'border-left-color',
         ];
     }
 
@@ -15,6 +17,7 @@ class RadialGradientPainter {
             size.height / 2,
             size.width / 2,
         );
+        // console.log(props);
         const stops = [
             [0, props.get('border-top-color')],
             [1, props.get('border-bottom-color')]

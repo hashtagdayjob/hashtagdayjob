@@ -12,11 +12,34 @@
 
 <body>
     <div class="radial-gradient">
-        
+    
+    </div>
+    <div class="ripple animateable" style="background-color: red;--animation-tick: 0;">
+    
     </div>
     <script>
         CSS.paintWorklet.addModule('../js/worklet.js');
         CSS.paintWorklet.addModule('../js/radialGradient.js');
+        CSS.paintWorklet.addModule('../js/ripple.js');
+        const logTick = (t) => {
+            console.log(t);
+            window.requestAnimationFrame(logTick);
+        }
+        const updateAnimationTick = (t) => {
+            const animateables = Array.from(document.querySelectorAll('.animateable'));
+            animateables.map((element) => {
+                element.setAttribute('data-animationtick', t);
+                let rules = element.style.cssText.split(';');
+                //console.log(rules);
+                var found = rules.findIndex(function (element) {
+                    return element.match(/--animation-tick/);
+                });
+                rules[found] = "--animation-tick:" + parseInt(t);
+                element.style.cssText = rules.join(':');
+            })
+            window.requestAnimationFrame(updateAnimationTick);
+        }
+        window.requestAnimationFrame(updateAnimationTick);
     </script>
 </body>
 

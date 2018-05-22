@@ -1,8 +1,8 @@
 function rssReader(url){
-    ajaxUtilities.create(
-        url, {
-            done: function (xhr) {
                 const parser = new DOMParser();
+                ajaxUtilities.create(
+                    url, {
+                        done: function (xhr) {
                 const xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
                 let items = {
                     guids: Array.from(xmlDoc.getElementsByTagName('guid')),
@@ -19,11 +19,15 @@ function rssReader(url){
                 let descriptions = Array.from(xmlDoc.getElementsByTagName('description')).map((element, index, array)=>{
                     return element.textContent;
                 });
+                let d = document.createElement('div');
+                d.innerHTML = descriptions[1];
+                let description = d.querySelector('p:nth-child(3)');
+                console.log(description);
                 document.getElementById('codepen').innerHTML = items.join('');
                 let script = document.createElement('script');
                 script.src = 'https://production-assets.codepen.io/assets/embed/ei.js';
                 document.head.appendChild(script);
-                console.log(items);
+                console.log(descriptions);
             }
         }
         , 'GET'

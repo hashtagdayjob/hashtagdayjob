@@ -14,13 +14,13 @@
     <div class="radial-gradient">
     
     </div>
-    <div class="ripple animateable" style="background-color: red;--animation-tick: 0;">
+    <div class="ripple animateable" style="background-color: red;--animation-tick: 0; color: blue">
     
     </div>
     <script>
         CSS.paintWorklet.addModule('../js/worklet.js');
         CSS.paintWorklet.addModule('../js/radialGradient.js');
-        CSS.paintWorklet.addModule('../js/ripple.js');
+        CSS.paintWorklet.addModule('../js/hueRotateBackground.js');
         const logTick = (t) => {
             console.log(t);
             window.requestAnimationFrame(logTick);

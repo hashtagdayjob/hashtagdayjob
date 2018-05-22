@@ -1,5 +1,5 @@
 :root{
-    --typographybackground: #f7931e;
+    --typographybackground: #fff;
     --audiobackground: #ff0;
     --youtubebackground: white;
     --codepenbackground: black;
@@ -33,6 +33,9 @@ body{
 }
 .typography{
     background-color: var(--typographybackground);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .audio{
     background-color: var(--audiobackground);

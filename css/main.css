@@ -8,9 +8,18 @@
     --bodybackground: black;
     --typecolor: white;
 }
+html{
+    height: 100%;
+}
 body{
+    height: 100%;
+    padding: 0;
+    margin:0;
+    font-family: 'proxima-nova-extra-condensed';
+    background-color: black;
     background-color: var(--bodybackground);
     color: var(--typecolor);
+    color: white;
 }
 .fluid-type {
     font-size: 14px;
@@ -72,6 +81,7 @@ body{
 }
 .description{
     height: 10vh;
+    margin: auto;
 }
 .player-wrapper{
     width: 100%;

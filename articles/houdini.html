@@ -11,12 +11,38 @@
 </head>
 
 <body>
-    <div class="radial-gradient">
-    
-    </div>
-    <div class="ripple animateable" style="background-color: red;--animation-tick: 0; color: blue">
-    
-    </div>
+    <article>
+        <header>
+            <h2>Radial gradient</h2>
+        </header>
+        <p>
+            This paint worklet paints a radial gradient onto the background.
+            The colours used in the gradient come from the border colours for the top and bottom borders.
+            Whilst this is a hack, it does allow for the radial gradient colours to be animated without any further code.
+            It assumes that you don't want to add an actual border to the element.
+        </p>
+        <div class="radial-gradient">
+
+        </div>
+    </article>
+    <article>
+        <header>
+            <h2>HUe rotation</h2>
+        </header>
+        <p>
+            This paint worklet paints a solid colour onto the background.
+            The colour is specified using hue, saturation, and lightness notation.
+            The actual hue is determined by the sine of an input property called animation tick.
+            The custom animation tick property is created by a small pieces of javascript which constantly updates
+            this property using request animation frame to provide a high resolution DOM timestamp continuously.
+            This allows the worklet to read in a constantly updating time value for animating the hue using the sine of this value.
+            This hack is onl necessary until animateable custom properties are available as prt of the Houdini spec.
+        </p>
+
+        <div class="ripple animateable" style="background-color: red;--animation-tick: 0; color: blue">
+
+        </div>
+    </article>
     <script>
         CSS.paintWorklet.addModule('../js/worklet.js');
         CSS.paintWorklet.addModule('../js/radialGradient.js');
@@ -31,7 +57,7 @@
                 element.setAttribute('data-animationtick', t);
                 let rules = element.style.cssText.split(';');
                 //console.log(rules);
-                var found = rules.findIndex(function (element) {
+                let found = rules.findIndex(function (element) {
                     return element.match(/--animation-tick/);
                 });
                 rules[found] = "--animation-tick:" + parseInt(t);

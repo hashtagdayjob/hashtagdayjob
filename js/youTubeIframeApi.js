@@ -27,6 +27,7 @@ function youTubeIframeApi(id, playlist) {
         console.log(scale);
         a.height = a.clientHeight * Math.min(maxScale, scale);
         a.width = a.clientWidth * Math.min(maxScale, scale);
+        document.querySelector('.description').style.width = (a.width) + 'px';
         event.target.cuePlaylist({listType: 'playlist', list: playlist});
         event.target.playVideo();
     }

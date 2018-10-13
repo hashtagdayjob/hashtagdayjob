@@ -19,9 +19,12 @@
     })(window, document, 'script', 'dataLayer', 'GTM-NG6QG58');
     </script>
     <!-- End Google Tag Manager -->
-    <title>HashtagDayjob Ltd</title>
+    <title>HashtagDayjob</title>
     <!-- Embed styles for faster loading -->
     <style>
+        *{
+            box-sizing: border-box;
+        }
         html{
             height: 100%;
         }
@@ -45,8 +48,10 @@
             grid-row-start: 2;
             grid-row-end: 3;
             grid-column-start: 1;
-            grid-column-end: 5;
+            grid-column-end: 2;
             margin: 0;
+            padding: 16px;
+            padding: 1rem;
         }
         h1 img{
             width: 100%;
@@ -96,20 +101,23 @@
             width: 100%;
             height: 100%;
         }
+        @media screen and (orientation: portrait){
+            main{
+                grid-template-rows: 37.5% 25% 37.5%;
+            }
+            section{
+                flex-wrap: wrap;
+            }
+            section > *{
+                flex-basis: 50%;
+                height: 50%;
+            }
+        }
     </style>
     <link href="css/main.css" rel="stylesheet" type="text/css">
     <!-- Typekit -->
     <script src="//use.typekit.net/bin2ptp.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
-    <script id="locizify" 
-        projectid="ed4b3481-d721-4fa7-aefc-1fdecc9d2edd" 
-        debug="false" 
-        apikey="4d19e77f-0c90-42df-b331-95c9c3cf474b"
-        saveMissing="true" 
-        referencelng="en-GB" 
-        fallbacklng="en-GB" 
-        src="https://unpkg.com/locizify@^2.0.0" >
-        </script>
 </head>
 
 <body>
@@ -142,9 +150,34 @@
                     <img src="images/Reason.svg" alt="Reason patches and stuff">
                 </a>
             </article>
+            <article class="typography">
+                <a href="articles/typography_opentype.html">
+                    <img src='images/opentype.jpg' style="height: auto" alt="Typography">
+                </a>
+            </article>
+            <article class="audio">
+                <a href="/AudioContext/index.html">
+                    <img src="images/Audio Icon Square Black On Yellow.svg" alt="Web Audio">
+                </a>
+            </article>
+            <article class="reason">
+                <a href="/articles/reason_patches.html">
+                    <img src="images/Reason.svg" alt="Reason patches and stuff">
+                </a>
+            </article>
         </section>
         <section class="play">
             <p>#play</p>
+            <article class="codepen">
+                <a href="articles/codepen_collection.html">
+                    <img src='images/codepen.svg' style="width:80%;margin: auto" alt="Codepen demos and stuff">
+                </a>
+            </article>
+            <article class="soundcloud">
+                <a href="/articles/soundcloud.html">
+                    <img src="images/soundcloud_logo.svg" style="width: 80%;margin:auto;" alt="Soundcloud playlist">
+                </a>
+            </article>
             <article class="youTube">
                 <a href="articles/youtube_channel.html">
                     <img src='images/YouTube-logo-full_color.svg' alt="Youtube channel videos">

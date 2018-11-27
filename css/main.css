@@ -94,24 +94,35 @@ body{
     background-image: paint(placeholder-box);
 }
 .radial-gradient {
+    --gradient-divisor: 1;
     width: 200px;
     height: 200px;
     border-top-color: rgba(255, 0, 0, 0.1);
     border-bottom-color: rgba(0, 255, 0, 0.1);
     background-image: paint(radial-gradient);
-    animation: pulse-top-border 3s alternate infinite, pulse-bottom-border 3s alternate infinite;
+    animation: pulse-top-border 0.3s alternate infinite, pulse-bottom-border 3s alternate infinite, gradient-divisor 3s alternate infinite;
 }
 .ripple {
     width: 200px;
     height: 200px;
     background-image: paint(hueRotateBackground);
 }
+@keyframes gradient-divisor{
+    0% {
+        --gradient-divisor: 1;
+    }
+    100%{
+        --gradient-divisor: 10;
+    }
+}
 @keyframes pulse-top-border {
     0% {
-        border-top-color: rgba(255, 0, 0, 0); 
+        border-top-color: rgba(255, 0, 0, 0);
+        border-bottom-width: 5px;
     }
     100% {
         border-top-color: rgba(255, 0, 0, 1);
+        border-bottom-width: 100px;
     }
 }
 @keyframes pulse-bottom-border {

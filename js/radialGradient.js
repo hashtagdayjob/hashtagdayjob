@@ -2,22 +2,24 @@ class RadialGradientPainter {
     static get inputProperties() {
         return [
             'border-top-color',
-            'border-right-color',
             'border-bottom-color',
-            'border-left-color',
+            '--animation-tick',
+            '--gradient-divisor'
         ];
     }
 
     paint(ctx, size, props) {
+        let tick = parseFloat(props.get('--animation-tick').toString());
+        let divisor = parseFloat(props.get('--gradient-divisor').toString());
+        console.log(Math.sin(tick/1000));
         const gradient = ctx.createRadialGradient(
-            size.width / 2,
-            size.height / 2,
+            (Math.sin(tick/1000) * size.width / 2) + size.width / 2,
+            (Math.cos(tick/1000) * size.height / 2) +size.height / 2,
             0,
-            size.width / 2,
-            size.height / 2,
-            size.width / 2,
+            size.width / divisor,
+            size.height / divisor,
+            size.width,
         );
-        // console.log(props);
         const stops = [
             [0, props.get('border-top-color')],
             [1, props.get('border-bottom-color')]

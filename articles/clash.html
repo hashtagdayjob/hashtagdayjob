@@ -8,6 +8,12 @@
 <div id="app"></div>
 <script src="clashAPI.js"></script>
 <script src="clanData.js"></script>
+<script>
+    const clashApiKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjIwMTdkMWExLWQ3Y2YtNDNkYy1hYjI5LTM1ODE4ODNiMDFmYSIsImlhdCI6MTU0MjEyMDM4MSwic3ViIjoiZGV2ZWxvcGVyLzUwZWFjMmYwLTBhNDItNTJiMS0zMDM1LTZiZWI3ODM5N2M3MSIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxMDQuMjQuMTE5Ljk4Il0sInR5cGUiOiJjbGllbnQifV19.EaHP95tdg08vixCoPuDlta4cwkxq88yu44q-MMKpZXzfWeQ-DQpY4FmSxb7bWPwqfKwUqGCiURHfm4BA8oY3Nw";
+    const clashApiPlayerUrl = `https://api.clashroyale.com/v1/players/%232UJ99VGP8`;
+    fetch(clashApiPlayerUrl, {headers:{'Authorisation': `Bearer ${clashApiKey}`}})
+        .then(response => console.log(response.json()));
+</script>
 <script type="application/javascript">
     console.log(clashData);
     console.log(clanData);

@@ -149,7 +149,6 @@ requirejs(['audioContext'], function(audioContext){
             } else {
               filterCanvasCtx.lineTo(i, height - (y * scale));
             }
-            console.log(i,y);
         }
         filterCanvasCtx.lineTo(filterCanvas.width, filterCanvas.height/2);
         filterCanvasCtx.stroke();

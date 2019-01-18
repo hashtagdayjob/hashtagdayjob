@@ -152,7 +152,6 @@ requirejs(['audioContext'], function(audioContext){
         }
         filterCanvasCtx.lineTo(filterCanvas.width, filterCanvas.height/2);
         filterCanvasCtx.stroke();
-        console.log(freq, magResponse, phaseResponse);
     }
     window.animateDisplay = function(){
         canvasCtx.clearRect(0, 0, canvasCtx.canvas.width, canvasCtx.canvas.height);

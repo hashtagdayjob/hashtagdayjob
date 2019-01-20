@@ -1,0 +1,112 @@
+{
+    "dir": "ltr",
+    "lang": "en",
+    "name": "Simplethiser",
+    "scope": "/AudioContext/experiments/simplethiser.html",
+    "display": "fullscreen",
+    "start_url": "https://hashtagdayjob.co.uk/AudioContext/experiments/simplethiser.html",
+    "short_name": "Simplethiser",
+    "theme_color": "transparent",
+    "description": "A simple web audio synth",
+    "orientation": "any",
+    "background_color": "transparent",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "/images/2c631e2a-8686-d6e0-8b53-7e604136e444.webPlatform.png",
+            "sizes": "44x44",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/71fb4a99-287f-1f84-2ebd-67f41f83ea79.webPlatform.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/815cd82e-a33f-0b8d-edf1-d30e5b9a2a5c.webPlatform.png",
+            "sizes": "1240x600",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/cac0e91b-57c9-025e-ad57-d66c70fa5261.webPlatform.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/1a1b48e0-14a8-f3d9-6b25-2bafd2a73768.webPlatform.png",
+            "sizes": "150x150",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/db268a99-4546-6316-9fdc-0622ce5496d0.webPlatform.png",
+            "sizes": "88x88",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/e74ecc56-ab6d-a908-f25b-ce315b8d92ac.webPlatform.png",
+            "sizes": "24x24",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/35be1bea-6918-f340-d146-b067b74e4ba2.webPlatform.png",
+            "sizes": "50x50",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/8aa07288-045e-9108-b4eb-66f93f4eccaf.webPlatform.png",
+            "sizes": "620x300",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/cc271279-d37b-5065-551f-80217115b5de.webPlatform.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/4b4a7f1f-2723-3ee3-312c-b5a4ad08ce2d.webPlatform.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/787e385e-e1b8-8eb9-04dd-a7fc7b113e29.webPlatform.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/43f4ae2d-0a68-d15b-9eea-c323d2e76311.webPlatform.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/0736b4a4-9c29-0be3-dd6c-8b7a6c9ae7f9.webPlatform.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/ios/ios-appicon-1024-1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/2961db82-af60-bbbe-6dff-bce3819b9c66.webPlatform.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/757f2410-6386-d8e2-cb33-ccd0ecb82d78.webPlatform.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/bf9f37ab-a7e3-f6f9-e47c-6b51fd0dedf9.webPlatform.png",
+            "sizes": "120x120",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/64234b4e-d26e-39db-1b8f-fc54eacdff2a.webPlatform.png",
+            "sizes": "76x76",
+            "type": "image/png"
+        }
+    ]
+}

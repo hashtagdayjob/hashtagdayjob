@@ -1,4 +1,5 @@
 class RadialGradientPainter {
+    
     static get inputProperties() {
         return [
             'border-top-color',
@@ -31,6 +32,7 @@ class RadialGradientPainter {
         ctx.fillStyle = gradient;
         ctx.fill();
     }
+    
 }
 
 registerPaint('radial-gradient', RadialGradientPainter);

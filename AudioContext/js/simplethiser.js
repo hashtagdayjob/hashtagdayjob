@@ -45,8 +45,6 @@ requirejs(['audioContext'], function(audioContext){
         (Math.pow(2, document.querySelector('#oscillator1Octave').value) * 55) * Math.pow(2, document.querySelector('#oscillator2Octave').value),
         document.querySelector('#oscillator2Detune').value
         );
-    osc1.start(0);
-    osc2.start(0);
     window.lfo1 = audioContext.createLfoNode(context, filter1.frequency, 'sine', 0.1, 100);
     window.envelope = function(context, audioParam, startValue, peakValue, attackTime, decayTime, sustainValue, holdTime, releaseTime){
         audioContext.linearEnvelopeADSR(context, audioParam, startValue, peakValue, attackTime, decayTime, sustainValue, holdTime, releaseTime);
@@ -161,5 +159,9 @@ requirejs(['audioContext'], function(audioContext){
         requestAnimationFrame(animateDisplay);
 
     }
-    animateDisplay();
+    animateDisplay()
+    window.initSimplethiser = function(){
+        window.osc1.start(0);
+        window.osc2.start(0);
+    };
 });

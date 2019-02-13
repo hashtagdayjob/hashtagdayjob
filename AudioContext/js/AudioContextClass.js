@@ -1,4 +1,4 @@
-class AudioContext {
+class AudioContextClass {
     init() {
         window.AudioContext = window.AudioContext || window.webkitAudioContext;
         return new AudioContext();
@@ -238,7 +238,7 @@ class AudioContext {
         _lfo.oscillator = this.createOscillatorNode(context, _lfo.gain, waveform, frequency, 0);
         _lfo.oscillator.start(0);
         return _lfo;
-    },
+    }
     //Effects Units
     createEchoUnit(context, destination) {
         var delay = arguments.length <= 2 || arguments[2] === undefined ? 1 : arguments[2];
@@ -511,3 +511,6 @@ class AudioContext {
         return _compressorUnit;
     }
 };
+
+window.ac = new AudioContextClass();
+window.ac.init();

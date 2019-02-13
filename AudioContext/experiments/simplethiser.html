@@ -7,13 +7,14 @@
     <link rel="manifest" href="manifest.json">
     <!-- Typekit --> 
     <script src="//use.typekit.net/bin2ptp.js"></script>
+    <script src="../js/AudioContextClass.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body>
-<button onClick="initSimplethiser()" type="button">Start</button>
+
     <h1>Simplethiser <button id='envelopeTrigger'>Trigger</button></h1>
-<form>
+<form style="opacity: 0;">
     <fieldset>
         <legend>Oscilliscope</legend>
         <div id='oscilliscope'>
@@ -180,7 +181,8 @@
         </div>
     </fieldset>
 </form>
-<script src='../js/require.js' data-main='../js/simplethiser'></script>
+    <button onClick="initSimplethiser()" type="button" class="init-button">Start</button>
+    <script src='../js/require.js' data-main='../js/simplethiser'></script>
 <script type='text/javascript'>
     document.querySelector('#oscilliscopeVisualiser').height = '200';
     document.querySelector('#oscilliscopeVisualiser').width = document.querySelector('#oscilliscope').clientWidth;

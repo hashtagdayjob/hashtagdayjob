@@ -162,6 +162,7 @@ requirejs(['audioContext'], function(audioContext){
     animateDisplay()
     window.initSimplethiser = function(){
         document.querySelector('form').style.opacity = 1;
+        document.querySelector('body').style.overflow = 'auto';
         document.querySelector('.init-button').style.display = 'none';
         window.osc1.start(0);
         window.osc2.start(0);

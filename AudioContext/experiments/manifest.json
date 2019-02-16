@@ -6,10 +6,10 @@
     "display": "fullscreen",
     "start_url": "https://hashtagdayjob.co.uk/AudioContext/experiments/simplethiser.html",
     "short_name": "Simplethiser",
-    "theme_color": "transparent",
+    "theme_color": "cadetblue",
     "description": "A simple web audio synth",
     "orientation": "any",
-    "background_color": "transparent",
+    "background_color": "cadetblue",
     "related_applications": [],
     "prefer_related_applications": false,
     "icons": [

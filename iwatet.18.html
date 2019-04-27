@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+
+  Created using /viewer/
+  Source can be edited via /viewer/iwatet/18/edit
+
+-->
+  
+<head>
+  
+<title>OS OpenSpace Example - Basic Map</title>  
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  
+<!-- Remember to insert your own API key in the URL below -->
+  
+<script type="text/javascript" src="http://openspace.ordnancesurvey.co.uk/osmapapi/openspace.js?key=BA08531D8339984EE0405F0AC86026A9"></script>
+
+</head>
+  
+<body onload="init()">
+  
+<h2>Displaying an OS OpenSpace map</h2>
+  
+<!-- The div below holds the map -->
+  
+<div id="map" style="width: 700px; height: 500px; border: 1px solid black;"></div>
+  
+<script>
+//define the osMap variable
+
+var osMap;
+
+//this function creates the map and is called by the div in the HTML
+
+function init()
+
+  {
+    
+//create new map
+    
+    osMap = new OpenSpace.Map('map');
+    
+//set map centre in National Grid Eastings and Northings and select zoom level 10
+
+    osMap.setCenter(new OpenSpace.MapPoint(400000, 400000), 0);
+            
+  }
+</script>
+</body>
+</html>

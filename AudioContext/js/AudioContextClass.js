@@ -512,5 +512,4 @@ class AudioContextClass {
     }
 };
 
-window.ac = new AudioContextClass();
-window.ac.init();
+window.audioContext = new AudioContextClass();

@@ -98,14 +98,12 @@ body{
     --gradient-start-color: rgba(255, 0, 0, 0.1);
     --gradient-end-color: rgba(0, 255, 0, 0.1);
     background-image: paint(radial-gradient);
-    animation: pulse-top-border 0.3s alternate infinite, pulse-bottom-border 3s alternate infinite, gradient-divisor 3s alternate infinite;
+    animation: pulse-top-border 3s alternate infinite, pulse-bottom-border 3s alternate infinite, gradient-divisor 3s alternate infinite;
 }
 .hue-rotate-background {
     background-image: paint(hue-rotate-background);
 }
 .ripple {
-    width: 200px;
-    height: 200px;
     background-image: paint(ripple);
 }
 @keyframes gradient-divisor{
@@ -118,19 +116,17 @@ body{
 }
 @keyframes pulse-top-border {
     0% {
-        border-top-color: rgba(255, 0, 0, 0);
-        border-bottom-width: 5px;
+        --gradient-start-color: rgba(255, 0, 0, 0);
     }
     100% {
-        border-top-color: rgba(255, 0, 0, 1);
-        border-bottom-width: 100px;
+        --gradient-start-color: rgba(255, 0, 0, 1);
     }
 }
 @keyframes pulse-bottom-border {
     0% {
-        border-bottom-color: rgba(0, 255, 0, 1);
+        --gradient-end-color: rgba(0, 255, 0, 1);
     }
     100% {
-        border-bottom-color: rgba(0, 255, 0, 0);
+        --gradient-end-color: rgba(0, 255, 0, 0);
     }
 }

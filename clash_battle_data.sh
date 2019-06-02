@@ -7,7 +7,7 @@ FILENAME_JENNY="clash_battle_data_JENNY_$NOW.json"
 echo $FILENAME_NIGEL
 echo $FILENAME_JENNY
 cd git/hashtagdayjob/clash_data/
-curl -X GET --header 'Accept: application/json' --header "$AUTH" "https://api.clashroyale.com/v1/players/$23$NIGEL/battlelog" > $FILENAME_NIGEL
+curl -X GET --header 'Accept: application/json' --header "$AUTH" "https://api.clashroyale.com/v1/players/%23$NIGEL/battlelog" > $FILENAME_NIGEL
 curl -X GET --header 'Accept: application/json' --header "$AUTH" "https://api.clashroyale.com/v1/players/%23$JENNY/battlelog" > $FILENAME_JENNY
 
 

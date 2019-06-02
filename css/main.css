@@ -94,18 +94,19 @@ body{
     background-image: paint(placeholder-box);
 }
 .radial-gradient {
-    --gradient-divisor: 1;
-    width: 200px;
-    height: 200px;
-    border-top-color: rgba(255, 0, 0, 0.1);
-    border-bottom-color: rgba(0, 255, 0, 0.1);
+    --gradient-divisor: 0.5;
+    --gradient-start-color: rgba(255, 0, 0, 0.1);
+    --gradient-end-color: rgba(0, 255, 0, 0.1);
     background-image: paint(radial-gradient);
     animation: pulse-top-border 0.3s alternate infinite, pulse-bottom-border 3s alternate infinite, gradient-divisor 3s alternate infinite;
+}
+.hue-rotate-background {
+    background-image: paint(hue-rotate-background);
 }
 .ripple {
     width: 200px;
     height: 200px;
-    background-image: paint(hueRotateBackground);
+    background-image: paint(ripple);
 }
 @keyframes gradient-divisor{
     0% {

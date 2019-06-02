@@ -4,7 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!-- Typekit -->
+    <script src="//use.typekit.net/bin2ptp.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
     <link href="/css/main.css" rel="stylesheet">
+    <style>
+        body{
+            display: flex;
+        }
+        article{
+            display: flex;
+            flex-flow: column;
+            flex-basis: 50%;
+            flex-grow: 1;
+            padding: 16px;
+        }
+        article > div, article > header{
+            flex-grow: 0;
+        }
+        article > p{
+            flex-grow: 1;
+        }
+        article > div{
+            height: 500px;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,7 +48,7 @@
     </article>
     <article>
         <header>
-            <h2>HUe rotation</h2>
+            <h2>Hue rotation</h2>
         </header>
         <p>
             This paint worklet paints a solid colour onto the background.
@@ -36,18 +60,13 @@
             This hack is onl necessary until animateable custom properties are available as prt of the Houdini spec.
         </p>
 
-        <div class="ripple animateable" style="background-color: red;--animation-tick: 0; color: blue">
+        <div class="hue-rotate-background animateable" style="background-color: red;--animation-tick: 0; color: blue">
 
         </div>
     </article>
     <script>
-        CSS.paintWorklet.addModule('../js/worklet.js');
         CSS.paintWorklet.addModule('../js/radialGradient.js');
         CSS.paintWorklet.addModule('../js/hueRotateBackground.js');
-        const logTick = (t) => {
-            console.log(t);
-            window.requestAnimationFrame(logTick);
-        }
         const updateAnimationTick = (t) => {
             const animateables = Array.from(document.querySelectorAll('.animateable'));
             animateables.map((element) => {

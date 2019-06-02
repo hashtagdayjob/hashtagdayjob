@@ -2,5 +2,11 @@
   "name": "hashtagdayjob",
   "version": "0.0.0",
   "description": "Website for hashtagdayjob.co.uk",
-  "author": "Nigel Wade"
+  "author": "Nigel Wade",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
 }
